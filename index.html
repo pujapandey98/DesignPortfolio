@@ -1,334 +1,201 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Puja Pandey — Product & UI/UX Designer</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
-  <style>
-    :root{
-      --accent: #b26b2f;
-      --accent-2: #8c4c22;
-      --muted: #6b6b6b;
-      --bg: #ffffff;
-      --card: #fbfaf8;
-      --radius: 14px;
-      --container: 1200px;
-      --glass: rgba(18,18,18,0.04);
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Puja Pandey – Portfolio</title>
+
+<style>
+    body {
+        margin: 0;
+        font-family: "Poppins", sans-serif;
+        background: #f7f3ff;
+        color: #3d2a54;
     }
-    *{box-sizing:border-box}
-    html,body{height:100%;margin:0;font-family:Inter,system-ui,-apple-system,'Segoe UI',Roboto,Arial;color:#111;background:var(--bg);-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}
-    a{color:inherit;text-decoration:none}
-    .wrap{max-width:var(--container);margin:48px auto;padding:36px;border-radius:18px;background:linear-gradient(180deg,#fff,#fcfbfa);box-shadow:0 18px 50px rgba(18,18,18,0.06)}
-    header{display:flex;align-items:center;justify-content:space-between;gap:24px}
-    .brand{display:flex;align-items:center;gap:16px}
-    .logo {font-family:'Playfair Display'; font-weight:700; color:var(--accent); font-size:22px; letter-spacing:0.2px}
-    .tag {color:var(--muted); font-size:13px}
-    nav a{margin-left:18px;color:var(--muted);font-weight:600;font-size:14px}
-    /* HERO */
-    .hero{display:grid;grid-template-columns:1fr 420px;gap:32px;align-items:center;margin-top:28px}
-    .kicker{font-weight:700;color:var(--accent);font-size:13px;letter-spacing:0.8px}
-    h1{font-family:'Playfair Display';font-weight:700;font-size:40px;margin:12px 0 6px;line-height:1.02}
-    p.lead{font-size:16px;color:var(--muted);line-height:1.7;margin:0 0 18px}
-    .cta{display:flex;gap:12px;flex-wrap:wrap}
-    .btn{background:var(--accent);color:white;padding:12px 16px;border-radius:10px;font-weight:700;display:inline-block}
-    .btn.ghost{background:transparent;border:2px solid var(--accent);color:var(--accent)}
-    .skills-row{display:flex;gap:10px;flex-wrap:wrap;margin-top:10px}
-    .skill{padding:8px 12px;background:var(--card);border-radius:999px;font-weight:700;color:var(--accent);font-size:13px;box-shadow:0 6px 18px rgba(18,18,18,0.03)}
-    .hero-card{background:linear-gradient(180deg,#fff,#faf7f4);padding:18px;border-radius:12px;box-shadow:0 10px 30px rgba(18,18,18,0.06);display:flex;flex-direction:column;gap:12px;align-items:center}
-    .hero-card img{width:100%;height:auto;border-radius:8px;object-fit:cover}
-    /* About + Skills */
-    .about{display:flex;gap:28px;margin-top:28px;align-items:flex-start}
-    .about-left{flex:1;min-width:320px}
-    .about-right{width:360px}
-    .card{background:#fff;border-radius:12px;padding:18px;box-shadow:0 8px 26px rgba(18,18,18,0.04);margin-bottom:16px}
-    .h2{font-family:'Playfair Display';font-size:22px;margin:0 0 8px}
-    ul.plain{padding:0;margin:0;list-style:none;color:var(--muted);line-height:1.7}
-    /* Services */
-    .services{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:12px}
-    .service{padding:14px;border-radius:10px;background:linear-gradient(180deg,#fff,#fcfbfa);border:1px solid rgba(0,0,0,0.03);min-height:88px}
-    .service strong{display:block;margin-bottom:6px}
-    .muted{color:var(--muted);font-size:14px}
-    /* Case studies */
-    .section-title{font-family:'Playfair Display';font-size:20px;margin:18px 0 6px}
-    .projects-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:12px}
-    .project{background:#fff;border-radius:12px;padding:12px;box-shadow:0 10px 30px rgba(18,18,18,0.04);display:flex;flex-direction:column;gap:10px;min-height:240px}
-    .proj-thumb{height:140px;border-radius:8px;overflow:hidden;background:linear-gradient(90deg,#f6f6f6,#f2f0ee);display:flex;align-items:center;justify-content:center}
-    .proj-thumb img{width:100%;height:100%;object-fit:cover}
-    .proj-meta{display:flex;justify-content:space-between;align-items:center}
-    .tag-small{background:var(--card);padding:6px 10px;border-radius:999px;font-weight:700;color:var(--accent);font-size:12px}
-    .proj-desc{color:var(--muted);font-size:14px}
-    .proj-cta{margin-top:auto;display:flex;justify-content:space-between;align-items:center}
-    .view{font-weight:700;color:var(--accent)}
-    /* Tools */
-    .tools{display:flex;flex-wrap:wrap;gap:8px;margin-top:8px}
-    .tool{padding:8px 10px;background:linear-gradient(180deg,#fff,#fcfbfa);border-radius:8px;border:1px solid rgba(0,0,0,0.03);font-weight:700;color:var(--muted);font-size:13px}
-    /* Comic showcase */
-    .comic{display:flex;gap:14px;align-items:center;margin-top:12px}
-    .comic img{width:100%;border-radius:10px;box-shadow:0 12px 30px rgba(18,18,18,0.06)}
-    /* Footer / contact */
-    footer{margin-top:28px;display:flex;justify-content:space-between;align-items:center;gap:16px}
-    .contact-cta{display:flex;gap:12px;align-items:center}
-    .small{font-size:13px;color:var(--muted)}
-    /* responsive */
-    @media (max-width:1100px){.projects-grid{grid-template-columns:repeat(2,1fr)}.hero{grid-template-columns:1fr 360px}.about{flex-direction:column}.about-right{width:100%}}
-    @media (max-width:700px){.projects-grid{grid-template-columns:1fr}.hero{grid-template-columns:1fr}.wrap{margin:18px;padding:18px}.logo{font-size:18px}}
-    /* micro interactions */
-    .project:hover{transform:translateY(-6px);transition:transform .28s ease}
-    .btn, .view{transition:all .18s ease}
-    .btn:hover{transform:translateY(-3px)}
-  </style>
+
+    h1, h2, h3 {
+        font-weight: 700;
+        color: #4a2c7a;
+    }
+
+    a {
+        color: #7a4bd1;
+        text-decoration: none;
+    }
+
+    header {
+        padding: 20px 50px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background: #ffffffaa;
+        backdrop-filter: blur(4px);
+        position: sticky;
+        top: 0;
+        z-index: 999;
+    }
+
+    .container {
+        width: 85%;
+        margin: auto;
+    }
+
+    .hero {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 100px 0;
+    }
+
+    .hero-text {
+        width: 50%;
+    }
+
+    .hero-text h1 {
+        font-size: 48px;
+        line-height: 1.2;
+    }
+
+    .hero-text p {
+        font-size: 18px;
+        margin-top: 10px;
+        opacity: 0.9;
+    }
+
+    .hero img {
+        width: 45%;
+        border-radius: 20px;
+        box-shadow: 0 10px 40px rgba(110, 66, 170, 0.25);
+    }
+
+    .section {
+        margin-top: 120px;
+    }
+
+    .section-title {
+        text-align: center;
+        font-size: 36px;
+        margin-bottom: 50px;
+    }
+
+    .grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 30px;
+    }
+
+    .card {
+        background: white;
+        border-radius: 15px;
+        padding: 15px;
+        box-shadow: 0 10px 25px rgba(80, 45, 140, 0.1);
+        transition: 0.3s;
+    }
+
+    .card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 20px 40px rgba(80, 45, 140, 0.18);
+    }
+
+    .card img {
+        width: 100%;
+        border-radius: 10px;
+    }
+</style>
 </head>
+
 <body>
-  <main class="wrap" role="main">
-    <!-- Header -->
-    <header>
-      <div class="brand" aria-hidden="false">
-        <div class="logo">Puja <span style="color:var(--accent-2)">Pandey</span></div>
-        <div class="tag small">Product • UI/UX • Graphic • Branding</div>
-      </div>
-      <nav aria-label="Main">
-        <a href="#work">Work</a>
+
+<header>
+    <h2>Puja Pandey</h2>
+    <nav>
+        <a href="#about">About</a>
         <a href="#skills">Skills</a>
-        <a href="#about-me">About</a>
+        <a href="#work">Work</a>
         <a href="#contact">Contact</a>
-      </nav>
-    </header>
+    </nav>
+</header>
 
-    <!-- HERO -->
-    <section class="hero" aria-labelledby="intro">
-      <div>
-        <div class="kicker">DESIGNER — PRODUCT & UI/UX</div>
-        <h1 id="intro">I design usable products and memorable brand experiences.</h1>
-        <p class="lead">I’m Puja Pandey — a multidisciplinary designer from Kolkata. I specialise in product design, responsive UI, brand systems and marketing creatives. I blend research-led UX with polished visual design to ship usable, beautiful digital products.</p>
+<section class="hero container">
+    <div class="hero-text">
+        <h1>Creative Graphic, UI/UX & Product Designer</h1>
+        <p>Designing impactful visuals, intuitive interfaces, brand systems & digital experiences.</p>
+    </div>
 
-        <div class="cta" role="group" aria-label="primary actions">
-          <a class="btn" href="#work">View Work</a>
-          <a class="btn ghost" href="/resume.pdf" target="_blank" rel="noopener">Download CV</a>
-          <a class="btn" href="#contact" style="background:#222;color:white">Hire / Collaborate</a>
+    <img src="assets/images/hero-visual.jpeg" alt="Portfolio Hero Image">
+</section>
+
+<section id="about" class="section container">
+    <h2 class="section-title">About Me</h2>
+    <p style="font-size:18px; width:80%; margin:auto; text-align:center;">
+        Hi, I'm <b>Puja Pandey</b>, a multidisciplinary designer with experience in UI/UX,
+        marketing design, branding, social media creatives, print, product design, and web design.
+        I’ve designed full websites, company branding, social campaigns, game UI, and comic books.
+    </p>
+</section>
+
+<section id="skills" class="section container">
+    <h2 class="section-title">Skills</h2>
+
+    <div class="grid">
+        <div class="card">
+            <h3>UI/UX Design</h3>
+            <p>Web & mobile app design, wireframes, user flows, prototypes.</p>
         </div>
 
-        <div class="skills-row" aria-hidden="true" style="margin-top:14px">
-          <div class="skill">Product Design</div>
-          <div class="skill">UI/UX</div>
-          <div class="skill">Branding & Marketing</div>
-          <div class="skill">Web Design</div>
-          <div class="skill">Comic & Illustration</div>
+        <div class="card">
+            <h3>Graphic & Branding</h3>
+            <p>Brand identity, logo, posters, corporate branding.</p>
         </div>
 
-        <!-- quick summary card -->
-        <div class="card" style="margin-top:18px;display:flex;gap:12px;align-items:center">
-          <div style="flex:1">
-            <div style="font-weight:800">Selected strengths</div>
-            <div class="muted" style="margin-top:6px">Design systems, Interaction design, User research, Visual branding, Marketing campaigns, Responsive web.</div>
-          </div>
-          <div style="min-width:120px;text-align:right">
-            <div style="font-weight:800">3+ yrs</div>
-            <div class="small muted">Design & product experience</div>
-          </div>
-        </div>
-      </div>
-
-      <!-- hero visual -->
-      <aside class="hero-card" aria-hidden="true">
-        <!-- placeholder art / uploaded asset -->
-        <img src="/mnt/data/Intro.png" alt="Portfolio visual placeholder">
-        <div class="small muted">Design showcase — placeholder. Replace with your production hero image or illustration.</div>
-      </aside>
-    </section>
-
-    <!-- ABOUT + SKILLS -->
-    <section class="about" id="about-me" aria-labelledby="about-title">
-      <div class="about-left">
-        <div class="h2" id="about-title">About — Puja Pandey</div>
-        <p class="muted">I craft user-centred interfaces, visual systems, and marketing assets that help products reach their users more effectively. I’ve worked across web, mobile, and printed media — building everything from multi-screen UI flows to comic books and ad creatives.</p>
-
-        <div style="display:flex;gap:16px;margin-top:16px;align-items:flex-start">
-          <div style="flex:1">
-            <div class="card">
-              <strong>Past roles (placeholders)</strong>
-              <ul class="plain">
-                <li>Graphic & Web Designer — Company A</li>
-                <li>UI/UX Designer — Company B</li>
-                <li>Freelance Product & Visual Designer</li>
-              </ul>
-            </div>
-
-            <div class="card">
-              <strong>Selected projects (placeholders)</strong>
-              <ul class="plain">
-                <li>Google Maps — Indoor AR Navigation (concept)</li>
-                <li>YouTube Kids — Engagement Redesign</li>
-                <li>AI Shopping Lens — Prototype & Flow</li>
-                <li>Ollie’s Promise — Game UI & Promotional Art</li>
-              </ul>
-            </div>
-          </div>
-
-          <div style="width:220px">
-            <div class="card">
-              <strong>Location</strong>
-              <div class="muted" style="margin-top:6px">Kolkata, India (remote available)</div>
-            </div>
-
-            <div class="card" style="margin-top:12px">
-              <strong>Contact</strong>
-              <div class="muted" style="margin-top:6px"><a href="mailto:youremail@example.com">youremail@example.com</a></div>
-            </div>
-          </div>
+        <div class="card">
+            <h3>Marketing & Strategy</h3>
+            <p>Campaign planning, engagement creatives, deck design.</p>
         </div>
 
-      </div>
-
-      <aside class="about-right" aria-labelledby="skills">
-        <div class="card" id="skills">
-          <div style="display:flex;justify-content:space-between;align-items:center">
-            <div class="h2">Skills</div>
-            <div class="small muted">Grouped</div>
-          </div>
-
-          <div style="margin-top:10px">
-            <div style="font-weight:800;margin-bottom:6px">Design</div>
-            <div class="muted">Product Design • UI/UX • Interaction • Prototyping • Usability Testing • Design Systems</div>
-
-            <div style="font-weight:800;margin-top:10px;margin-bottom:6px">Visual & Brand</div>
-            <div class="muted">Branding Strategy • Visual Identity • Illustration • Comic Design • Print Design • Marketing Campaigns</div>
-
-            <div style="font-weight:800;margin-top:10px;margin-bottom:6px">Tools</div>
-            <div class="tools">
-              <div class="tool">Figma</div>
-              <div class="tool">Photoshop</div>
-              <div class="tool">Illustrator</div>
-              <div class="tool">Adobe XD</div>
-              <div class="tool">Wix Studio</div>
-              <div class="tool">After Effects</div>
-            </div>
-          </div>
+        <div class="card">
+            <h3>Print & Collaterals</h3>
+            <p>Calendars, brochures, packaging, stall branding.</p>
         </div>
+    </div>
+</section>
 
-        <div class="card" style="margin-top:12px">
-          <div class="h2">Services</div>
-          <div class="services" aria-hidden="true">
-            <div class="service"><strong>Product Design</strong><div class="muted">Research • Flows • Prototypes</div></div>
-            <div class="service"><strong>UI/UX</strong><div class="muted">Responsive UI • Accessibility</div></div>
-            <div class="service"><strong>Branding & Marketing</strong><div class="muted">Identity • Social Ads • Campaigns</div></div>
-            <div class="service"><strong>Web Design</strong><div class="muted">Landing Pages • Content Sites</div></div>
-            <div class="service"><strong>Graphic Design</strong><div class="muted">Print • Brochure • Comic</div></div>
-            <div class="service"><strong>Consulting</strong><div class="muted">Design Reviews • Workshops</div></div>
-          </div>
-        </div>
-      </aside>
-    </section>
+<section id="work" class="section container">
+    <h2 class="section-title">Portfolio Work</h2>
 
-    <!-- WORK / CASE STUDIES -->
-    <section id="work" aria-labelledby="work-title">
-      <div class="section-title" id="work-title">Selected Case Studies</div>
-      <div class="muted">Click any project to view the full case study (placeholders). Focus here is on outcome, role & tools.</div>
+    <h3 style="margin-bottom:20px;">Collaterals & Print Design</h3>
+    <div class="grid">
+        <div class="card"><img src="assets/images/collateral-01.jpeg"></div>
+        <div class="card"><img src="assets/images/collateral-02.jpeg"></div>
+        <div class="card"><img src="assets/images/collateral-03.jpeg"></div>
+    </div>
 
-      <div class="projects-grid" style="margin-top:12px">
-        <!-- Project 1 -->
-        <article class="project" aria-labelledby="p1">
-          <div class="proj-thumb">
-            <img src="/mnt/data/Intro.png" alt="Google Maps AR placeholder">
-          </div>
-          <div>
-            <div class="proj-meta"><div style="font-weight:800">Indoor Navigation — AR Overlay</div><div class="tag-small">Concept</div></div>
-            <div class="proj-desc" id="p1">Role: Product Designer • Tools: Figma, Prototyping • Summary: Designed an AR overlay concept for indoor navigation to help users find locations inside malls/airports.</div>
-          </div>
-          <div class="proj-cta">
-            <div class="muted">Impact: Improved perceived wayfinding clarity (prototype metrics placeholder)</div>
-            <a class="view" href="#case1">View case</a>
-          </div>
-        </article>
+    <h3 style="margin:50px 0 20px;">Social Media Creatives</h3>
+    <div class="grid">
+        <div class="card"><img src="assets/images/social-media-01.jpeg"></div>
+        <div class="card"><img src="assets/images/social-media-02.jpeg"></div>
+        <div class="card"><img src="assets/images/social-media-03.jpeg"></div>
+    </div>
 
-        <!-- Project 2 -->
-        <article class="project" aria-labelledby="p2">
-          <div class="proj-thumb">
-            <img src="/mnt/data/Intro.png" alt="YouTube Kids placeholder">
-          </div>
-          <div>
-            <div class="proj-meta"><div style="font-weight:800">YouTube Kids — Engagement Redesign</div><div class="tag-small">Redesign</div></div>
-            <div class="proj-desc" id="p2">Role: UX Designer • Tools: Figma, User Testing • Summary: Redesigned content discovery and parental controls to increase session quality for younger users.</div>
-          </div>
-          <div class="proj-cta">
-            <div class="muted">Outcome: Better engagement (placeholder metrics)</div>
-            <a class="view" href="#case2">View case</a>
-          </div>
-        </article>
+    <h3 style="margin:50px 0 20px;">Marketing & Corporate Decks</h3>
+    <div class="grid">
+        <div class="card"><img src="assets/images/marketing-deck-01.jpeg"></div>
+        <div class="card"><img src="assets/images/marketing-deck-02.jpeg"></div>
+        <div class="card"><img src="assets/images/marketing-deck-03.jpeg"></div>
+    </div>
 
-        <!-- Project 3 -->
-        <article class="project" aria-labelledby="p3">
-          <div class="proj-thumb">
-            <img src="/mnt/data/Intro.png" alt="Lens shopping placeholder">
-          </div>
-          <div>
-            <div class="proj-meta"><div style="font-weight:800">AI Shopping Lens — Prototype</div><div class="tag-small">Prototype</div></div>
-            <div class="proj-desc" id="p3">Role: Product & Interaction Designer • Tools: Figma, After Effects • Summary: Explored an AI-first shopping flow from image capture to purchase suggestion.</div>
-          </div>
-          <div class="proj-cta">
-            <div class="muted">Learnings: Model feedback & interaction patterns (placeholder)</div>
-            <a class="view" href="#case3">View case</a>
-          </div>
-        </article>
-      </div>
+    <h3 style="margin:50px 0 20px;">Game UI Design</h3>
+    <div class="grid">
+        <div class="card"><img src="assets/images/game-ui-01.jpeg"></div>
+    </div>
+</section>
 
-      <!-- more projects -->
-      <div style="margin-top:18px" class="projects-grid">
-        <div class="project">
-          <div class="proj-thumb"><img src="/mnt/data/Intro.png" alt="comic"></div>
-          <div><strong>Comic Book — Children</strong><div class="muted">Illustration • Layout • Print-ready</div></div>
-          <div class="proj-cta"><div class="muted">Samples in portfolio</div><a class="view" href="#comic">View</a></div>
-        </div>
-        <div class="project">
-          <div class="proj-thumb"><img src="/mnt/data/Intro.png" alt="web"></div>
-          <div><strong>Brand Website</strong><div class="muted">Landing • Content strategy</div></div>
-          <div class="proj-cta"><div class="muted">SEO-friendly UI</div><a class="view" href="#web">View</a></div>
-        </div>
-        <div class="project">
-          <div class="proj-thumb"><img src="/mnt/data/Intro.png" alt="game ui"></div>
-          <div><strong>Ollie’s Promise — Game UI</strong><div class="muted">UI • Promo art • UX</div></div>
-          <div class="proj-cta"><div class="muted">Emotional storytelling</div><a class="view" href="#game">View</a></div>
-        </div>
-      </div>
-    </section>
+<section id="contact" class="section container">
+    <h2 class="section-title">Contact</h2>
+    <p style="text-align:center; font-size:18px;">
+        Email: <a href="mailto:pujapandey998@gmail.com">pujapandey998@gmail.com</a>
+    </p>
+</section>
 
-    <!-- Comic / Illustration showcase -->
-    <section style="margin-top:20px">
-      <div class="section-title">Comic & Illustration</div>
-      <div class="muted">Book mockups, spreads and character art (placeholder images)</div>
-      <div class="comic" style="margin-top:12px">
-        <img src="/mnt/data/Intro.png" alt="comic mockup 1" style="width:48%">
-        <img src="/mnt/data/Intro.png" alt="comic mockup 2" style="width:48%">
-      </div>
-    </section>
-
-    <!-- CONTACT & FOOTER -->
-    <footer id="contact">
-      <div style="display:flex;flex-direction:column;gap:8px">
-        <div style="font-weight:800">Let’s build something —</div>
-        <div class="small muted">Email: <a href="mailto:youremail@example.com">youremail@example.com</a> • Location: Kolkata, India</div>
-      </div>
-
-      <div class="contact-cta">
-        <a class="btn" href="mailto:youremail@example.com">Email me</a>
-        <div style="text-align:right">
-          <div class="small muted">Follow</div>
-          <div style="margin-top:6px"><a class="small muted" href="#">LinkedIn</a> • <a class="small muted" href="#">Behance</a></div>
-        </div>
-      </div>
-    </footer>
-  </main>
-
-  <script>
-    // Small interaction: smooth scroll for internal anchors
-    document.querySelectorAll('a[href^="#"]').forEach(a=>{
-      a.addEventListener('click', e=>{
-        e.preventDefault();
-        const id = a.getAttribute('href').slice(1);
-        const el = document.getElementById(id) || document.querySelector('[aria-labelledby="'+id+'"]');
-        if(el) el.scrollIntoView({behavior:'smooth', block:'start'});
-      });
-    });
-  </script>
 </body>
 </html>
