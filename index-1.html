@@ -1,0 +1,208 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Puja Pandey — Portfolio (Placeholder)</title>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;800&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --accent:#c89f74;
+      --dark:#2b2b2b;
+      --muted:#8a7e70;
+      --bg:#f4ede3;
+      --paper:#ebdccb;
+      --max-width:1100px;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0; font-family: 'Nunito', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+      color:var(--dark); background: var(--bg) url('/mnt/data/Intro.png') no-repeat right top/cover; /* decorative background using provided image */
+      -webkit-font-smoothing:antialiased; -moz-osx-font-smoothing:grayscale;
+    }
+    .container{max-width:var(--max-width);margin:40px auto;background:linear-gradient(180deg, rgba(255,255,255,0.95), rgba(255,255,255,0.98));padding:28px;border-radius:12px;box-shadow:0 10px 30px rgba(17,17,17,0.06)}
+    header{display:flex;align-items:center;justify-content:space-between}
+    .brand{display:flex;align-items:center;gap:14px}
+    .logo{font-family:'Playfair Display';font-weight:700;color:var(--accent);font-size:22px}
+    nav a{color:var(--muted);text-decoration:none;margin-left:18px;font-weight:600}
+
+    .hero{display:grid;grid-template-columns:1fr 420px;gap:30px;align-items:center;padding:28px 0}
+    .hero h1{font-family:'Playfair Display';font-size:34px;margin:0 0 8px}
+    .hero .sub{font-weight:700;color:var(--muted);margin-bottom:18px}
+    .cta{display:flex;gap:12px;margin-bottom:18px}
+    .btn{background:var(--accent);color:white;padding:10px 16px;border-radius:8px;text-decoration:none;font-weight:700}
+    .btn.secondary{background:transparent;border:2px solid var(--accent);color:var(--accent)}
+    .hero-visual{background:linear-gradient(180deg, #fff, #f7f2ee);border-radius:8px;padding:18px;box-shadow:0 8px 20px rgba(0,0,0,0.06)}
+    .hero-visual img{width:100%;height:auto;border-radius:6px}
+
+    .about{display:flex;gap:24px;padding:22px 0;border-top:1px dashed rgba(0,0,0,0.05)}
+    .about .left{width:44%}
+    .about .right{flex:1}
+    .about h2{font-family:'Playfair Display';font-size:26px;margin:0 0 10px}
+    .muted{color:var(--muted)}
+
+    .chips{display:flex;gap:10px;flex-wrap:wrap;margin-top:8px}
+    .chip{background:var(--paper);border-radius:20px;padding:8px 12px;font-weight:700;color:var(--accent)}
+
+    .two-cols{display:grid;grid-template-columns:1fr 1fr;gap:22px;margin-top:26px}
+    .card{background:linear-gradient(180deg,#fff,#fcfbfa);padding:18px;border-radius:10px;box-shadow:0 6px 16px rgba(11,11,11,0.03)}
+    .card h3{margin:0 0 8px;font-size:18px}
+
+    .services{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:20px}
+    .service{padding:18px;border-radius:10px;background:transparent;border:1px dashed rgba(0,0,0,0.04)}
+
+    .portfolio{padding:28px 0;border-top:1px dashed rgba(0,0,0,0.05)}
+    .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+    .proj{background:#fff;border-radius:10px;padding:12px;min-height:160px;display:flex;align-items:center;justify-content:center}
+    .proj img{max-width:100%;height:auto;border-radius:8px}
+
+    footer{padding:18px 0;margin-top:18px;border-top:1px solid rgba(0,0,0,0.03);display:flex;justify-content:space-between;align-items:center}
+
+    /* responsive */
+    @media (max-width:960px){
+      .hero{grid-template-columns:1fr;}
+      .about{flex-direction:column}
+      .about .left{width:100%}
+      .two-cols{grid-template-columns:1fr}
+      .services{grid-template-columns:1fr 1fr}
+      .grid{grid-template-columns:repeat(2,1fr)}
+      body{background-image:none}
+    }
+    @media (max-width:520px){
+      .grid{grid-template-columns:1fr}
+      nav a{margin-left:10px}
+      .logo{font-size:18px}
+    }
+
+    /* small helper styles */
+    .text-muted{color:var(--muted);font-size:14px}
+    .lead{font-size:15px;line-height:1.6}
+  </style>
+</head>
+<body>
+  <div class="container" role="main">
+    <header>
+      <div class="brand">
+        <div class="logo">Puja <span style="color:var(--dark)">Pandey</span></div>
+        <div class="text-muted">Creative Graphic • UI/UX • Web</div>
+      </div>
+      <nav aria-label="Main navigation">
+        <a href="#about">About</a>
+        <a href="#portfolio">Portfolio</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </header>
+
+    <section class="hero" aria-labelledby="intro">
+      <div>
+        <h1 id="intro">CREATIVE Graphic,<br>UI/UX, Web Design</h1>
+        <div class="sub">DESIGNER — Product • UI • Visual • Branding</div>
+        <div class="cta">
+          <a class="btn" href="#portfolio">Portfolio</a>
+          <a class="btn secondary" href="#contact">Download CV</a>
+        </div>
+
+        <p class="lead">Hi — I'm <strong>Puja Pandey</strong>, a versatile designer focused on crafting clear user experiences and vibrant visual identities. Below are sample projects and placeholders — replace them with your real content when ready.</p>
+
+        <div class="chips">
+          <div class="chip">UI/UX Design</div>
+          <div class="chip">Web Design</div>
+          <div class="chip">Graphic Design</div>
+          <div class="chip">Branding</div>
+        </div>
+      </div>
+
+      <aside class="hero-visual" aria-hidden="true">
+        <!-- using uploaded image path as placeholder visual -->
+        <img src="/mnt/data/Intro.png" alt="portfolio visual placeholder">
+      </aside>
+    </section>
+
+    <section id="about" class="about">
+      <div class="left">
+        <h2>About me</h2>
+        <p class="text-muted">Product-focused designer with experience across graphic design, web, and UI/UX. I design delightful interfaces, improve usability, and deliver assets for marketing and print.</p>
+
+        <div class="two-cols">
+          <div class="card">
+            <h3>Past Experience</h3>
+            <ul class="text-muted">
+              <li>Graphic & Web Designer — <em>Company A</em> (Placeholder)</li>
+              <li>UI/UX Designer — <em>Company B</em> (Placeholder)</li>
+              <li>Freelance Graphic Designer — (Placeholder)</li>
+            </ul>
+          </div>
+          <div class="card">
+            <h3>Software</h3>
+            <div class="text-muted">Photoshop • Illustrator • Figma • Adobe XD • After Effects</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="right">
+        <div class="card">
+          <h3>What I Do</h3>
+          <div class="services">
+            <div class="service">
+              <strong>UI/UX Design</strong>
+              <div class="text-muted">Research • Wireframes • Prototyping</div>
+            </div>
+            <div class="service">
+              <strong>Web Design</strong>
+              <div class="text-muted">Responsive design • Landing pages</div>
+            </div>
+            <div class="service">
+              <strong>Graphic Design</strong>
+              <div class="text-muted">Print • Comic design • Brochure</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="card" style="margin-top:16px">
+          <h3>Contact</h3>
+          <p class="text-muted">Email: <a href="mailto:youremail@example.com">youremail@example.com</a></p>
+          <p class="text-muted">Location: Kolkata, India (placeholder)</p>
+          <a class="btn" id="contact" href="mailto:youremail@example.com">Get in touch</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="portfolio" class="portfolio">
+      <h2 style="font-family:'Playfair Display'">Responsive UI/UX Design for Desktop and Mobile Platforms</h2>
+      <p class="text-muted">Below are placeholder images. Replace with your real project screenshots or Figma exports.</p>
+
+      <div class="grid" style="margin-top:16px">
+        <div class="proj"><img src="/mnt/data/Intro.png" alt="project placeholder 1"></div>
+        <div class="proj"><img src="/mnt/data/Intro.png" alt="project placeholder 2"></div>
+        <div class="proj"><img src="/mnt/data/Intro.png" alt="project placeholder 3"></div>
+        <div class="proj"><img src="/mnt/data/Intro.png" alt="project placeholder 4"></div>
+        <div class="proj"><img src="/mnt/data/Intro.png" alt="project placeholder 5"></div>
+        <div class="proj"><img src="/mnt/data/Intro.png" alt="project placeholder 6"></div>
+      </div>
+
+      <h2 style="font-family:'Playfair Display';margin-top:28px">Comic design</h2>
+      <p class="text-muted">Book mockups and print-ready spread previews (placeholders)</p>
+      <div class="grid" style="margin-top:12px">
+        <div class="proj" style="min-height:220px"><img src="/mnt/data/Intro.png" alt="comic 1"></div>
+        <div class="proj" style="min-height:220px"><img src="/mnt/data/Intro.png" alt="comic 2"></div>
+        <div class="proj" style="min-height:220px"><img src="/mnt/data/Intro.png" alt="comic 3"></div>
+      </div>
+    </section>
+
+    <footer>
+      <div class="text-muted">© Puja Pandey — Portfolio (Placeholders). Built with HTML/CSS.</div>
+      <div class="text-muted">Follow: <a href="#">LinkedIn</a> • <a href="#">Behance</a></div>
+    </footer>
+  </div>
+
+  <script>
+    // small JS to enable keyboard shortcut: press 'p' to go to portfolio
+    document.addEventListener('keydown', function(e){
+      if(e.key === 'p' || e.key === 'P'){
+        location.hash = '#portfolio';
+      }
+    });
+  </script>
+</body>
+</html>
