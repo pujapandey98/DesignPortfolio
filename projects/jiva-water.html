@@ -3,20 +3,41 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Project Case Study | Puja Pandey</title>
+  <title>JIVA Water Campaigns | Puja Pandey</title>
   <style>
-    body{margin:0;font-family:Inter,Arial,sans-serif;background:#09090f;color:#f4f2ff;display:grid;place-items:center;min-height:100vh;padding:2rem}
-    .card{max-width:720px;width:100%;background:#16161f;border:1px solid #ffffff1a;border-radius:18px;padding:2rem}
-    h1{margin:0 0 .75rem;font-size:1.6rem}
+    body{margin:0;font-family:Inter,Arial,sans-serif;background:#09090f;color:#f4f2ff;padding:2rem}
+    .wrap{max-width:1000px;margin:0 auto}
+    .card{background:#16161f;border:1px solid #ffffff1a;border-radius:18px;padding:1.4rem}
+    h1{margin:.2rem 0 1rem;font-size:2rem} h2{font-size:1.15rem;margin:0 0 1rem}
     p{color:#b4b1cb;line-height:1.7}
     a{color:#c084fc;text-decoration:none}
+    .meta{display:flex;gap:.7rem;flex-wrap:wrap;margin:.8rem 0 1.3rem}
+    .pill{font-size:.78rem;padding:.35rem .7rem;border-radius:999px;background:#7c3aed26;border:1px solid #7c3aed52}
+    .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1rem}
+    .asset{background:#11111a;border:1px solid #ffffff12;border-radius:14px;overflow:hidden}
+    img,video{width:100%;height:170px;object-fit:cover;display:block;background:#000}
+    .txt{padding:.85rem}
+    .k{font-size:.72rem;color:#8f8ca8;text-transform:uppercase;letter-spacing:.06em}
   </style>
 </head>
 <body>
-  <article class="card">
-    <h1>Project detail page coming soon</h1>
-    <p>This is a placeholder case study page for Puja Pandey's portfolio. Full process, outcomes, and visuals will be added soon.</p>
+  <main class="wrap">
     <p><a href="../index.html#work">← Back to portfolio</a></p>
-  </article>
+    <section class="card">
+      <h1>JIVA Water — Brand & Marketing Design</h1>
+      <p>A collection of campaign and product communication assets created for JIVA Water across print, digital, and motion formats.</p>
+      <div class="meta"><span class="pill">Branding</span><span class="pill">Social Media</span><span class="pill">Print Collateral</span><span class="pill">Video</span></div>
+    </section>
+    <br/>
+    <section class="card">
+      <h2>Selected Work from assets/work</h2>
+      <div class="grid">
+        <article class="asset"><img src="../assets/work/WorldHealthDay2024.jpg" alt="World health day visual"/><div class="txt"><div class="k">Static</div><a href="../assets/work/WorldHealthDay2024.jpg" target="_blank">World Health Day Post</a></div></article>
+        <article class="asset"><img src="../assets/work/VISHU-2024_1.jpg" alt="Vishu campaign"/><div class="txt"><div class="k">Festival campaign</div><a href="../assets/work/VISHU-2024_1.jpg" target="_blank">Vishu Creative</a></div></article>
+        <article class="asset"><video controls src="../assets/work/Ugadi_English-2024.mp4"></video><div class="txt"><div class="k">Motion</div><a href="../assets/work/Ugadi_English-2024.mp4" target="_blank">Ugadi Video</a></div></article>
+        <article class="asset"><img src="../assets/work/invest on your health.jpg" alt="Invest on your health visual"/><div class="txt"><div class="k">Campaign</div><a href="../assets/work/invest on your health.jpg" target="_blank">Health Awareness Post</a></div></article>
+      </div>
+    </section>
+  </main>
 </body>
 </html>
